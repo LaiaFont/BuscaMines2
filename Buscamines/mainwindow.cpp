@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    //console.log(minefield);
     cont=0;
     pols=false;
     Q_INIT_RESOURCE(resource);
@@ -22,10 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(time, SIGNAL(timeout()), this, SLOT(Contador()));
     time->start(1000);
 
-
-
     CrearMatriu();
-
 }
 
 MainWindow::~MainWindow()
@@ -62,15 +60,15 @@ void Cell::mouseLeftClick(QMouseEvent* e){
 
 
 void MainWindow::CrearMatriu(){
-
     QGridLayout* layout = new QGridLayout(ui->taulell);
+    Cell* cela;
     layout->setContentsMargins(5,0,5,0);
     layout->setSpacing(3);
     for (int i=0; i<9; i++){
         for (int j=0; j<9; j++){
-            minefield[i][j] = new QPushButton(this);
-            minefield[i][j]->setMinimumSize(20,30);
-            layout->addWidget(minefield[i][j], i, j);
+            Cell minefield[i][j];
+            cela->setMinimumSize(20,30);
+            layout->addWidget(cela, i, j);
 
         }
     }
