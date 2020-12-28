@@ -27,7 +27,7 @@ private:
     bool pols;
     int cont;
 
-    Cell minefield[9][9];
+    Cell* minefield[9][9];
 };
 
 #endif // MAINWINDOW_H
